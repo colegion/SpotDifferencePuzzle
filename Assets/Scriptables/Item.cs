@@ -9,5 +9,6 @@ namespace Scriptables
         public Vector2 ItemPosition;
         public Vector2 ItemSize;
         public Vector3 ItemRotation;
+        public Color ItemColor;
     }
 }
