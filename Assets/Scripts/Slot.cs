@@ -35,6 +35,8 @@ public class Slot : MonoBehaviour
     {
         _modifiableParent = modifiable;
         slotImage.sprite = item.ItemSprite;
+        if (item.ItemSprite == null)
+            slotImage.color = new Color(1, 1, 1, 1/255f);
         rectTransform.anchoredPosition = item.ItemPosition;
         rectTransform.sizeDelta = item.ItemSize;
     }

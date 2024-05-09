@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b2b23a4d5db7648a30734898769af4, type: 3}
+  m_Name: HairContainer
+  m_EditorClassIdentifier: 
+  Items:
+  - {fileID: 11400000, guid: dfc4a30c1caaa8e4d97738188e0d0b1a, type: 2}
+  - {fileID: 11400000, guid: 9c0ffef5b9dd00242a560beef2fa3a17, type: 2}

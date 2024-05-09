@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27b2b23a4d5db7648a30734898769af4, type: 3}
-  m_Name: FeetHolder
+  m_Script: {fileID: 11500000, guid: e4717ce1022c99e46b63c1b3107c317b, type: 3}
+  m_Name: Wave_24
   m_EditorClassIdentifier: 
-  Items:
-  - {fileID: 11400000, guid: f6e4811e2d081a8429de71a29d3f1f77, type: 2}
-  - {fileID: 11400000, guid: d8ef5ccc5219d72488fde74bdb8cdb63, type: 2}
+  ItemSprite: {fileID: 21300000, guid: 4c62d196d81f39744b74fc32a5449244, type: 3}
+  ItemPosition: {x: 391, y: 0}
+  ItemSize: {x: 124, y: 109}
+  ItemRotation: {x: 0, y: 0, z: 0}
