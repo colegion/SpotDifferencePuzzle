@@ -15,3 +15,5 @@ MonoBehaviour:
   ItemSprite: {fileID: 21300000, guid: 68a669fd587ac074d9979737b1f251ce, type: 3}
   ItemPosition: {x: -143.1, y: -235.6}
   ItemSize: {x: 70, y: 70}
+  ItemRotation: {x: 0, y: 0, z: 0}
+  ItemColor: {r: 1, g: 1, b: 1, a: 1}

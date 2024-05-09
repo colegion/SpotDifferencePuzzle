@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4717ce1022c99e46b63c1b3107c317b, type: 3}
   m_Name: Crab_6
   m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 21300000, guid: 535405cba39970d418a7ff88a51ffb95, type: 3}
+  ItemSprite: {fileID: 21300000, guid: 062b04882b14b8b49b2401d012cdccbf, type: 3}
   ItemPosition: {x: -209.6, y: -289.3}
   ItemSize: {x: 100, y: 100}
   ItemRotation: {x: 0, y: 0, z: 0}
+  ItemColor: {r: 1, g: 1, b: 1, a: 1}

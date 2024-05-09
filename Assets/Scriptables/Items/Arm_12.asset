@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Arm_12
   m_EditorClassIdentifier: 
   ItemSprite: {fileID: 21300000, guid: 3f1391435c51d524eb557636eaf5bbae, type: 3}
-  ItemPosition: {x: -239.47, y: 203.4}
-  ItemSize: {x: 134.5, y: 100}
+  ItemPosition: {x: -232.7, y: 207.2}
+  ItemSize: {x: 201, y: 140}
   ItemRotation: {x: 0, y: 0, z: 0}
+  ItemColor: {r: 1, g: 1, b: 1, a: 1}

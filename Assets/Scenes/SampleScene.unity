@@ -233,6 +233,15 @@ MonoBehaviour:
   slotPrefab: {fileID: 2255536426645247990, guid: 843a7f41bf7b4f84c93060eb70bfc648, type: 3}
   modifiables:
   - ItemHolder: {fileID: 11400000, guid: 34cba8f7051380e4a8e061c47a03985b, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: 6cbe1ca810058b7478140563ce880c6e, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: 4bfcff395d1bd8a48853f73944b7956d, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: e48ae3e55d6ea214285f82308e89016b, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: 112ca8c8c83ebcd438aa3d4d8cc7d9b1, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: b2279d84aec04c94fb01064e8a3c89ff, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: d735b441c53180046bdc5204607cc3d9, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: 0e0774cd2d2c3e049a1330ba894b996e, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: 25b8b0acbe6e8a640bd31db626606d44, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: f435b262ad3de2b409b11ca90e9df23a, type: 2}
   feedbackController: {fileID: 287621563}
 --- !u!4 &287621562
 Transform:

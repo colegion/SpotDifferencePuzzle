@@ -16,4 +16,4 @@ MonoBehaviour:
   ItemPosition: {x: -65.2, y: -197.4}
   ItemSize: {x: 58, y: 70}
   ItemRotation: {x: 0, y: 0, z: 0}
-  ItemColor: {r: 1, g: 1, b: 1, a: 0}
+  ItemColor: {r: 1, g: 1, b: 1, a: 1}
