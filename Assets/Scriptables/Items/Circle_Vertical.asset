@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4717ce1022c99e46b63c1b3107c317b, type: 3}
-  m_Name: Circle_15
+  m_Name: Circle_Vertical
   m_EditorClassIdentifier: 
   ItemSprite: {fileID: 21300000, guid: 66a9e079372d4d14e94aa29ef70db317, type: 3}
   ItemPosition: {x: -65.2, y: -197.4}

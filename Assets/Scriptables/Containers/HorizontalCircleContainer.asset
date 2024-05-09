@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27b2b23a4d5db7648a30734898769af4, type: 3}
-  m_Name: CircleContainer
+  m_Name: HorizontalCircleContainer
   m_EditorClassIdentifier: 
   Items:
-  - {fileID: 11400000, guid: 66959933e5a851f478b4bce42acdcd09, type: 2}
-  - {fileID: 11400000, guid: 14ebb6e3dcc6dcf41b3e0994c5f8f914, type: 2}
+  - {fileID: 11400000, guid: 15bbd5916d79ceb4ca20093a9ea0acec, type: 2}
+  - {fileID: 11400000, guid: b5eb99caa7f742643af829d39e9daefa, type: 2}
+  - {fileID: 11400000, guid: f0a730c6801d0b44cb1bd2e8984e83dc, type: 2}

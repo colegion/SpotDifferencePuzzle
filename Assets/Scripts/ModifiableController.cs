@@ -13,6 +13,7 @@ public class ModifiableController : MonoBehaviour
 
     private List<Modifiable> _modifiedSlots = new List<Modifiable>();
 
+    private int _changeCount;
     private void OnEnable()
     {
         AddListeners();
@@ -42,10 +43,13 @@ public class ModifiableController : MonoBehaviour
         {
             if (ShouldChange())
             {
+                _changeCount++;
                 _modifiedSlots.Add(modifiables[i]);
                 modifiables[i].SetHasModified(true);
             }
         }
+        
+        Debug.Log("count: " + _changeCount);
     }
 
     private void HandleModifiableClick(Modifiable modifiable)

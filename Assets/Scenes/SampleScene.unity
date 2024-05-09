@@ -242,6 +242,7 @@ MonoBehaviour:
   - ItemHolder: {fileID: 11400000, guid: 0e0774cd2d2c3e049a1330ba894b996e, type: 2}
   - ItemHolder: {fileID: 11400000, guid: 25b8b0acbe6e8a640bd31db626606d44, type: 2}
   - ItemHolder: {fileID: 11400000, guid: f435b262ad3de2b409b11ca90e9df23a, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: ce4f6ec9ec7e11d48b870c6495ba3b8b, type: 2}
   feedbackController: {fileID: 287621563}
 --- !u!4 &287621562
 Transform:

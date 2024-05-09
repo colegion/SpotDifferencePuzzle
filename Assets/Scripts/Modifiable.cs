@@ -56,7 +56,6 @@ public class Modifiable
     public void SetHasModified(bool modify)
     {
         _hasModified = modify;
-        Debug.Log($"modified {modify}");
     }
 
     public bool GetModifiedStatus()
