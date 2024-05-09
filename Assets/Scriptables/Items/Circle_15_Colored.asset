@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4717ce1022c99e46b63c1b3107c317b, type: 3}
-  m_Name: Snail_Reverse
+  m_Name: Circle_15_Colored
   m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 21300000, guid: f8d6bbb9ddc4e4b4aabdabd837c1a57e, type: 3}
-  ItemPosition: {x: -21, y: -297.5}
-  ItemSize: {x: 55, y: 55}
-  ItemRotation: {x: 180, y: 0, z: 0}
+  ItemSprite: {fileID: 21300000, guid: 66a9e079372d4d14e94aa29ef70db317, type: 3}
+  ItemPosition: {x: -65.2, y: -197.4}
+  ItemSize: {x: 58, y: 70}
+  ItemRotation: {x: 0, y: 0, z: 0}
+  ItemColor: {r: 0.30588236, g: 0.627451, b: 0.87058824, a: 0}
