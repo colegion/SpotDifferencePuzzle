@@ -11,7 +11,6 @@ public class ModifiableController : MonoBehaviour
     [SerializeField] private Slot slotPrefab;
     [SerializeField] private Modifiable[] modifiables;
     [SerializeField] private FeedbackController feedbackController;
-    [SerializeField] private LevelProgressUIHelper progressUIHelper;
 
     private List<Modifiable> _modifiedSlots = new List<Modifiable>();
     private int _originalChangeCount;
@@ -37,7 +36,7 @@ public class ModifiableController : MonoBehaviour
             modifiable.ConfigureSlots();
         }
         
-        progressUIHelper.SpawnUnits(_originalChangeCount);
+        feedbackController.SpawnProgressUnits(_originalChangeCount);
     }
     
     private void DecideModifiableStatus()
@@ -60,8 +59,8 @@ public class ModifiableController : MonoBehaviour
         {
             _modifiedSlots.Remove(modifiable);
             modifiable.SetHasModified(false);
-            progressUIHelper.CompleteUnitByIndex(_originalChangeCount - _modifiedSlots.Count - 1);
         }
+        feedbackController.TriggerFeedbackHelper(modifiable.GetModifiedStatus(), _originalChangeCount - _modifiedSlots.Count - 1);
     }
     
     private bool ShouldChange()
