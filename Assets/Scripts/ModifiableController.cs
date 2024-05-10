@@ -14,7 +14,7 @@ public class ModifiableController : MonoBehaviour
     [SerializeField] private LevelProgressUIHelper progressUIHelper;
 
     private List<Modifiable> _modifiedSlots = new List<Modifiable>();
-    private int _changeCount;
+    private int _originalChangeCount;
     private void OnEnable()
     {
         AddListeners();
@@ -36,6 +36,8 @@ public class ModifiableController : MonoBehaviour
             modifiable.SetSlots(tempSlot, tempPair);
             modifiable.ConfigureSlots();
         }
+        
+        progressUIHelper.SpawnUnits(_originalChangeCount);
     }
     
     private void DecideModifiableStatus()
@@ -44,13 +46,11 @@ public class ModifiableController : MonoBehaviour
         {
             if (ShouldChange())
             {
-                _changeCount++;
+                _originalChangeCount++;
                 _modifiedSlots.Add(modifiables[i]);
                 modifiables[i].SetHasModified(true);
             }
         }
-        
-        Debug.Log("count: " + _changeCount);
     }
 
     private void HandleModifiableClick(Modifiable modifiable)
@@ -60,6 +60,7 @@ public class ModifiableController : MonoBehaviour
         {
             _modifiedSlots.Remove(modifiable);
             modifiable.SetHasModified(false);
+            progressUIHelper.CompleteUnitByIndex(_originalChangeCount - _modifiedSlots.Count - 1);
         }
     }
     
