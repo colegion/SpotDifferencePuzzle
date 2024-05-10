@@ -20,7 +20,7 @@ namespace Helpers
         {
             DOVirtual.DelayedCall(delay, () =>
             {
-                transform.DOScale(new Vector3(1f, 1f, 1f), 2f).SetEase(Ease.OutBounce);
+                transform.DOScale(new Vector3(1f, 1f, 1f), 2f).SetEase(Ease.OutBack);
             });
         }
 

@@ -28,24 +28,24 @@ public class HealthController : MonoBehaviour
     {
         for (int i = 0; i < HeartCount; i++)
         {
-            var tempHeart = Instantiate(heart, heartParent.transform);
             DOVirtual.DelayedCall(i * SpawnDuration, () =>
             {
-                tempHeart.transform.DOScale(new Vector3(1f, 1f, 1f), .9f).SetEase(Ease.OutBounce);
+                var tempHeart = Instantiate(heart, heartParent.transform);
+                tempHeart.transform.DOScale(new Vector3(1f, 1f, 1f), 2f).SetEase(Ease.OutBounce);
+                _spawnedHearts.Add(tempHeart);
             });
-            _spawnedHearts.Add(tempHeart);
         }
     }
 
     public void DecrementHeart()
     {
         var heartToCrack = _spawnedHearts[^1];
-        heartToCrack.transform.DOShakeScale(1f, 1f).OnComplete(() =>
+        heartToCrack.transform.DOShakeScale(1f, .4f).OnComplete(() =>
         {
-            heartToCrack.DOColor(Color.white, .8f).OnComplete(() =>
+            heartToCrack.DOColor(Color.white, .6f).OnComplete(() =>
             {
-               heartToCrack.gameObject.SetActive(false);
-               _spawnedHearts.Remove(heartToCrack);
+                heartToCrack.gameObject.SetActive(false);
+                _spawnedHearts.Remove(heartToCrack);
             });
         });
     }
