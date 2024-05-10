@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Helpers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,9 +11,9 @@ public class ModifiableController : MonoBehaviour
     [SerializeField] private Slot slotPrefab;
     [SerializeField] private Modifiable[] modifiables;
     [SerializeField] private FeedbackController feedbackController;
+    [SerializeField] private LevelProgressUIHelper progressUIHelper;
 
     private List<Modifiable> _modifiedSlots = new List<Modifiable>();
-
     private int _changeCount;
     private void OnEnable()
     {
