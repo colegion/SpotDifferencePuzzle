@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,16 +10,18 @@ namespace Helpers
     {
         [SerializeField] private Image unitImage;
         [SerializeField] private Color successColor;
-
-        private int _unitIndex = -1;
+        
         private void OnValidate()
         {
             unitImage = GetComponent<Image>();
         }
 
-        public void InitializeSelf(float animTime, int index)
+        public void InitializeSelf(float delay)
         {
-            _unitIndex = index;
+            DOVirtual.DelayedCall(delay, () =>
+            {
+                transform.DOScale(new Vector3(1f, 1f, 1f), 2f).SetEase(Ease.OutBounce);
+            });
         }
 
         public void SetUnitCompleted()
@@ -29,6 +32,7 @@ namespace Helpers
 
         private void AnimateUnit()
         {
+            transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), .5f).SetEase(Ease.OutBack).SetLoops(2, LoopType.Yoyo);
         }
     }
 }
