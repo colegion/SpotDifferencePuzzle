@@ -35,7 +35,7 @@ public class ModifiableController : MonoBehaviour
             modifiable.SetSlots(tempSlot, tempPair);
             modifiable.ConfigureSlots();
         }
-        
+        feedbackController.InjectModifiableController(this);
         feedbackController.SpawnProgressUnits(_originalChangeCount);
     }
     
@@ -60,7 +60,11 @@ public class ModifiableController : MonoBehaviour
             _modifiedSlots.Remove(modifiable);
             modifiable.SetHasModified(false);
         }
-        feedbackController.TriggerFeedbackHelper(modifiable.GetModifiedStatus(), _originalChangeCount - _modifiedSlots.Count - 1);
+    }
+
+    public int GetProgressIndex()
+    {
+        return _originalChangeCount - _modifiedSlots.Count - 1;
     }
     
     private bool ShouldChange()

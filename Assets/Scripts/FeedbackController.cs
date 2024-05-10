@@ -12,6 +12,13 @@ public class FeedbackController : MonoBehaviour
     [SerializeField] private Sprite trialFailedCircle;
     [SerializeField] private LevelProgressUIHelper progressUIHelper;
     [SerializeField] private HealthController healthController;
+
+    private ModifiableController _modifiableController;
+
+    public void InjectModifiableController(ModifiableController controller)
+    {
+        _modifiableController = controller;
+    }
     public void GiveFeedback(Modifiable modifiable)
     {
         var slots = modifiable.GetSlots();
@@ -19,19 +26,15 @@ public class FeedbackController : MonoBehaviour
         {
             var feedback = Instantiate(feedbackPrefab, slots[i].transform.parent);
             feedback.sprite = modifiable.GetModifiedStatus() ? trialSuccessCircle : trialFailedCircle;
+            if (modifiable.GetModifiedStatus())
+            {
+                progressUIHelper.CompleteUnitByIndex(_modifiableController.GetProgressIndex());
+            }
+            else
+            {
+                healthController.DecrementHeart();
+            }
             feedback.GetComponent<RectTransform>().anchoredPosition = slots[i].GetComponent<RectTransform>().anchoredPosition;
-        }
-    }
-
-    public void TriggerFeedbackHelper(bool decider, int index)
-    {
-        if (decider)
-        {
-            progressUIHelper.CompleteUnitByIndex(index);
-        }
-        else
-        {
-            healthController.DecrementHeart();
         }
     }
 
