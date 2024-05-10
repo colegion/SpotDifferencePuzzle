@@ -54,12 +54,12 @@ public class ModifiableController : MonoBehaviour
 
     private void HandleModifiableClick(Modifiable modifiable)
     {
-        feedbackController.GiveFeedback(modifiable);
         if (_modifiedSlots.Contains(modifiable))
         {
             _modifiedSlots.Remove(modifiable);
-            modifiable.SetHasModified(false);
         }
+        feedbackController.GiveFeedback(modifiable);
+        modifiable.SetHasModified(false);
     }
 
     public int GetProgressIndex()
