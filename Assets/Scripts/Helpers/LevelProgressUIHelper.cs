@@ -9,9 +9,9 @@ namespace Helpers
     {
         [SerializeField] private HorizontalLayoutGroup unitParent;
         [SerializeField] private ProgressUnit unitPrefab;
-
-        private const float SpawnDuration = .5f;
+        private const float SpawnDuration = .8f;
         
+        private List<ProgressUnit> _spawnedUnits = new List<ProgressUnit>();
         private void OnValidate()
         {
             unitParent = GetComponent<HorizontalLayoutGroup>();
@@ -22,8 +22,14 @@ namespace Helpers
             for (int i = 0; i < count; i++)
             {
                 var tempUnit = Instantiate(unitPrefab, unitParent.transform);
-                tempUnit.InitializeSelf(i * SpawnDuration, i);
+                tempUnit.InitializeSelf(i * SpawnDuration);
+                _spawnedUnits.Add(tempUnit);
             }
+        }
+
+        public void CompleteUnitByIndex(int index)
+        {
+            _spawnedUnits[index].SetUnitCompleted();
         }
     }
 }
