@@ -13,6 +13,7 @@ public class HealthController : MonoBehaviour
 
     private const int HeartCount = 3;
     private List<Image> _spawnedHearts = new List<Image>();
+    private FeedbackController _feedbackController;
 
     private void OnValidate()
     {
@@ -22,6 +23,11 @@ public class HealthController : MonoBehaviour
     private void Start()
     {
         SpawnHearts();
+    }
+    
+    public void InjectFeedbackController(FeedbackController controller)
+    {
+        _feedbackController = controller;
     }
 
     private void SpawnHearts()
@@ -48,5 +54,8 @@ public class HealthController : MonoBehaviour
                 _spawnedHearts.Remove(heartToCrack);
             });
         });
+        
+        if(_spawnedHearts.Count == 0)
+            _feedbackController.HandleOnLevelFinished(false);
     }
 }

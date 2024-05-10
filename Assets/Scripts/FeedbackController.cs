@@ -13,11 +13,15 @@ public class FeedbackController : MonoBehaviour
     [SerializeField] private LevelProgressUIHelper progressUIHelper;
     [SerializeField] private HealthController healthController;
 
+    [SerializeField] private ParticleSystem[] successConfetti;
+
     private ModifiableController _modifiableController;
 
     public void InjectModifiableController(ModifiableController controller)
     {
         _modifiableController = controller;
+        progressUIHelper.InjectFeedbackController(this);
+        healthController.InjectFeedbackController(this);
     }
     public void GiveFeedback(Modifiable modifiable)
     {
@@ -40,6 +44,17 @@ public class FeedbackController : MonoBehaviour
 
     public void SpawnProgressUnits(int count)
     {
-        progressUIHelper.SpawnUnits(count);
+        progressUIHelper.SpawnUnits(count, this);
+    }
+
+    public void HandleOnLevelFinished(bool isSuccess)
+    {
+        if (isSuccess)
+        {
+            for (int i = 0; i < successConfetti.Length; i++)
+            {
+                successConfetti[i].Play();
+            } 
+        }
     }
 }

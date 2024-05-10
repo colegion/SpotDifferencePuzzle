@@ -12,13 +12,20 @@ namespace Helpers
         public const float SpawnDuration = .8f;
         
         private List<ProgressUnit> _spawnedUnits = new List<ProgressUnit>();
+        private FeedbackController _feedbackController;
         private void OnValidate()
         {
             unitParent = GetComponent<HorizontalLayoutGroup>();
         }
-
-        public void SpawnUnits(int count)
+        
+        public void InjectFeedbackController(FeedbackController controller)
         {
+            _feedbackController = controller;
+        }
+
+        public void SpawnUnits(int count, FeedbackController controller)
+        {
+            
             for (int i = 0; i < count; i++)
             {
                 var tempUnit = Instantiate(unitPrefab, unitParent.transform);
@@ -30,6 +37,10 @@ namespace Helpers
         public void CompleteUnitByIndex(int index)
         {
             _spawnedUnits[index].SetUnitCompleted();
+            if (index == _spawnedUnits.Count - 1)
+            {
+                _feedbackController.HandleOnLevelFinished(true);
+            }
         }
     }
 }
