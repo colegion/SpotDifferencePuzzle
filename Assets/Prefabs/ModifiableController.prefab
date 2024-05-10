@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4349211025085707302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8269392468152703440}
+  - component: {fileID: 2067309129867282951}
+  - component: {fileID: 3623743658948462312}
+  m_Layer: 0
+  m_Name: ModifiableController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8269392468152703440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4349211025085707302}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2067309129867282951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4349211025085707302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b541a3146e41496882e9321a1564b323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upperParent: {fileID: 0}
+  lowerParent: {fileID: 0}
+  slotPrefab: {fileID: 2255536426645247990, guid: 843a7f41bf7b4f84c93060eb70bfc648, type: 3}
+  modifiables:
+  - ItemHolder: {fileID: 11400000, guid: 34cba8f7051380e4a8e061c47a03985b, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: 6cbe1ca810058b7478140563ce880c6e, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: 4bfcff395d1bd8a48853f73944b7956d, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: e48ae3e55d6ea214285f82308e89016b, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: 112ca8c8c83ebcd438aa3d4d8cc7d9b1, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: b2279d84aec04c94fb01064e8a3c89ff, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: d735b441c53180046bdc5204607cc3d9, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: 0e0774cd2d2c3e049a1330ba894b996e, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: 25b8b0acbe6e8a640bd31db626606d44, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: f435b262ad3de2b409b11ca90e9df23a, type: 2}
+  - ItemHolder: {fileID: 11400000, guid: ce4f6ec9ec7e11d48b870c6495ba3b8b, type: 2}
+  feedbackController: {fileID: 3623743658948462312}
+--- !u!114 &3623743658948462312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4349211025085707302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ad7e25920b5d940833ed64afab75fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbackPrefab: {fileID: 6479613097860843510, guid: ed1ee9cba941d10448de57d606f6da84, type: 3}
+  trialSuccessCircle: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  trialFailedCircle: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
