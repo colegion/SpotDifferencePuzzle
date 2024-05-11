@@ -11,8 +11,10 @@ public class Modifiable
 {
     private Slot[] slots;
     public SlotItems ItemHolder;
+    public bool IsBackground;
 
     private bool _hasModified;
+    private Vector2 _clickPosition;
     
     public static event Action<Modifiable> OnSlotClicked;
 
@@ -44,11 +46,21 @@ public class Modifiable
         slots[1].ResetSelf();
     }
 
-    public void HandleOnSlotClick()
+    public void HandleOnSlotClick(Vector2 clickPos)
     {
-        slots[0].ToggleInteractable(false);
-        slots[1].ToggleInteractable(false);
+        if (!IsBackground)
+        {
+            slots[0].ToggleInteractable(false);
+            slots[1].ToggleInteractable(false);
+        }
+
+        _clickPosition = clickPos;
         OnSlotClicked?.Invoke(this);
+    }
+
+    public Vector2 GetClickPos()
+    {
+        return _clickPosition;
     }
 
     public void SetHasModified(bool modify)

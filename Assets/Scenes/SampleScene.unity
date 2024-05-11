@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -319.99997}
+  m_AnchoredPosition: {x: 0, y: -335}
   m_SizeDelta: {x: 1080, y: 700.7485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &163488583
@@ -1191,13 +1191,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1722781943}
     - target: {fileID: 2067309129867282951, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
-      propertyPath: modifiables.Array.size
-      value: 12
+      propertyPath: modifiables.Array.data[0].IsBackground
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2067309129867282951, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
-      propertyPath: modifiables.Array.data[11].ItemHolder
-      value: 
-      objectReference: {fileID: 11400000, guid: bbc02cbc326f78d44b63aa1bf002b46d, type: 2}
     - target: {fileID: 3623743658948462312, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
       propertyPath: healthController
       value: 
@@ -1217,18 +1213,6 @@ PrefabInstance:
     - target: {fileID: 4349211025085707302, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
       propertyPath: m_Name
       value: ModifiableController
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269392468152703440, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269392468152703440, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269392468152703440, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8269392468152703440, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
       propertyPath: m_LocalPosition.x

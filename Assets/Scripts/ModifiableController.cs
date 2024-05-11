@@ -44,7 +44,7 @@ public class ModifiableController : MonoBehaviour
     
     private void DecideModifiableStatus()
     {
-        for (int i = 0; i < modifiables.Length; i++)
+        for (int i = 1; i < modifiables.Length; i++)
         {
             if (ShouldChange())
             {

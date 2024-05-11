@@ -12,7 +12,7 @@ namespace Pool
         public static SlotPool Instance;
         private List<Slot> _pooledSlots;
         
-        private int _poolAmount = 24;
+        private int _poolAmount = 26;
 
         public static event Action OnPoolReady;
 
