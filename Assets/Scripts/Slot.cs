@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour
+public class Slot : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Image slotImage;
     [SerializeField] private RectTransform rectTransform;
@@ -22,16 +22,6 @@ public class Slot : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         slotImage = GetComponent<Image>();
         slotButton = GetComponent<Button>();
-    }
-
-    private void OnEnable()
-    {
-        AddListeners();
-    }
-
-    private void OnDisable()
-    {
-        RemoveListeners();
     }
 
     public void SetSlot(Item item, Modifiable modifiable)
@@ -71,19 +61,15 @@ public class Slot : MonoBehaviour
     {
         return _isActive;
     }
-
-    private void HandleOnClick()
+    
+    public void OnPointerClick(PointerEventData eventData)
     {
-        _modifiableParent.HandleOnSlotClick();
-    }
-
-    private void AddListeners()
-    {
-        slotButton.onClick.AddListener(HandleOnClick);
-    }
-
-    private void RemoveListeners()
-    {
-        slotButton.onClick.RemoveListener(HandleOnClick);
+        if (eventData.pointerPress && eventData.pointerPress.GetComponent<Button>())
+        {
+            RectTransform clickedRectTransform = eventData.pointerPress.GetComponent<RectTransform>();
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(clickedRectTransform, eventData.position, eventData.pressEventCamera, out Vector2 localPos);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), eventData.position, eventData.pressEventCamera, out Vector2 converted);
+            _modifiableParent.HandleOnSlotClick(converted);
+        }
     }
 }
