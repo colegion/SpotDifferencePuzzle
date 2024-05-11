@@ -9,7 +9,7 @@ namespace Helpers
     {
         [SerializeField] private HorizontalLayoutGroup unitParent;
         [SerializeField] private ProgressUnit unitPrefab;
-        public const float SpawnDuration = .8f;
+        public const float SpawnDuration = .4f;
         
         private List<ProgressUnit> _spawnedUnits = new List<ProgressUnit>();
         private FeedbackController _feedbackController;

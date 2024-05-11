@@ -20,7 +20,7 @@ namespace Helpers
         {
             DOVirtual.DelayedCall(delay, () =>
             {
-                transform.DOScale(new Vector3(1f, 1f, 1f), 2f).SetEase(Ease.OutBack);
+                transform.DOScale(new Vector3(1f, 1f, 1f), 1.8f).SetEase(Ease.OutBounce);
             });
         }
 
@@ -32,7 +32,7 @@ namespace Helpers
 
         private void AnimateUnit()
         {
-            transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), .5f).SetEase(Ease.OutBack).SetLoops(2, LoopType.Yoyo);
+            transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), .8f).SetEase(Ease.OutBounce).SetLoops(2, LoopType.Yoyo);
         }
     }
 }

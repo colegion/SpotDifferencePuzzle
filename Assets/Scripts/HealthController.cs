@@ -46,7 +46,7 @@ public class HealthController : MonoBehaviour
     public void DecrementHeart()
     {
         var heartToCrack = _spawnedHearts[^1];
-        heartToCrack.transform.DOShakeScale(1f, .4f).OnComplete(() =>
+        heartToCrack.transform.DOShakeScale(1f, .65f).OnComplete(() =>
         {
             heartToCrack.DOColor(Color.white, .6f).OnComplete(() =>
             {
