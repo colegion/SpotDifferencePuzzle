@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Scriptables;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -36,6 +37,7 @@ public class Slot : MonoBehaviour
         _modifiableParent = modifiable;
         slotImage.sprite = item.ItemSprite;
         slotImage.color = item.ItemColor;
+        rectTransform.eulerAngles = item.ItemRotation;
         rectTransform.anchoredPosition = item.ItemPosition;
         rectTransform.sizeDelta = item.ItemSize;
     }

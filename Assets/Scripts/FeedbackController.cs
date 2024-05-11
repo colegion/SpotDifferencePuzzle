@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Helpers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FeedbackController : MonoBehaviour
@@ -56,5 +58,10 @@ public class FeedbackController : MonoBehaviour
                 successConfetti[i].Play();
             } 
         }
+
+        DOVirtual.DelayedCall(1.5f, () =>
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 0);
+        });
     }
 }

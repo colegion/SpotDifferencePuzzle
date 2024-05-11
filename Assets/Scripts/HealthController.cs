@@ -52,10 +52,9 @@ public class HealthController : MonoBehaviour
             {
                 heartToCrack.gameObject.SetActive(false);
                 _spawnedHearts.Remove(heartToCrack);
+                if(_spawnedHearts.Count == 0)
+                    _feedbackController.HandleOnLevelFinished(false);
             });
         });
-        
-        if(_spawnedHearts.Count == 0)
-            _feedbackController.HandleOnLevelFinished(false);
     }
 }
