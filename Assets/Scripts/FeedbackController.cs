@@ -34,6 +34,14 @@ public class FeedbackController : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             var feedback = Instantiate(feedbackPrefab, slots[i].transform.parent);
+            if (modifiable.IsBackground)
+            {
+                feedback.GetComponent<RectTransform>().anchoredPosition = modifiable.GetClickPos();
+            }
+            else
+            {
+                feedback.GetComponent<RectTransform>().anchoredPosition = slots[i].GetComponent<RectTransform>().anchoredPosition;
+            }
             _spawnedFeedbackIcons.Add(feedback);
             feedback.sprite = modifiable.GetModifiedStatus() ? trialSuccessCircle : trialFailedCircle;
             if (modifiable.GetModifiedStatus())
@@ -44,7 +52,7 @@ public class FeedbackController : MonoBehaviour
             {
                 healthController.DecrementHeart();
             }
-            feedback.GetComponent<RectTransform>().anchoredPosition = slots[i].GetComponent<RectTransform>().anchoredPosition;
+            
         }
     }
 
