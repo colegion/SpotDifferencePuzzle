@@ -1190,10 +1190,6 @@ PrefabInstance:
       propertyPath: upperParent
       value: 
       objectReference: {fileID: 1722781943}
-    - target: {fileID: 2067309129867282951, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
-      propertyPath: modifiables.Array.data[0].IsBackground
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3623743658948462312, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
       propertyPath: healthController
       value: 
