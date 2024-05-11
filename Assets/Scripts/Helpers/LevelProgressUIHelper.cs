@@ -23,7 +23,7 @@ namespace Helpers
             _feedbackController = controller;
         }
 
-        public void SpawnUnits(int count, FeedbackController controller)
+        public void SpawnUnits(int count)
         {
             
             for (int i = 0; i < count; i++)
@@ -41,6 +41,15 @@ namespace Helpers
             {
                 _feedbackController.HandleOnLevelFinished(true);
             }
+        }
+
+        public void ResetUnits()
+        {
+            foreach (var unit in _spawnedUnits)
+            {
+                Destroy(unit.gameObject);
+            }
+            _spawnedUnits = new List<ProgressUnit>();
         }
     }
 }

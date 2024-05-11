@@ -21,7 +21,6 @@ public class Modifiable
         if (_hasModified)
         {
             var itemTuple = ItemHolder.GetOppositeItems();
-            //@todo: make this return list for iterating.
             slots[0].SetSlot(itemTuple.Item1, this);
             slots[1].SetSlot(itemTuple.Item2, this);
             Debug.Log("this is one of the modified ones" , slots[0].gameObject);
@@ -29,10 +28,8 @@ public class Modifiable
         else
         {
             var item = ItemHolder.GetRandomItem();
-            foreach (var slot in slots)
-            {
-                slot.SetSlot(item, this);
-            }
+            slots[0].SetSlot(item, this);
+            slots[1].SetSlot(item, this);
         }
     }
 
@@ -41,8 +38,16 @@ public class Modifiable
         slots = new[] { slot, pairSlot };
     }
 
+    public void ResetSlots()
+    {
+        slots[0].ResetSelf();
+        slots[1].ResetSelf();
+    }
+
     public void HandleOnSlotClick()
     {
+        slots[0].ToggleInteractable(false);
+        slots[1].ToggleInteractable(false);
         OnSlotClicked?.Invoke(this);
     }
 

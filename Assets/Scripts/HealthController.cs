@@ -19,18 +19,13 @@ public class HealthController : MonoBehaviour
     {
         heartParent = GetComponent<HorizontalLayoutGroup>();
     }
-
-    private void Start()
-    {
-        SpawnHearts();
-    }
     
     public void InjectFeedbackController(FeedbackController controller)
     {
         _feedbackController = controller;
     }
 
-    private void SpawnHearts()
+    public void SpawnHearts()
     {
         for (int i = 0; i < HeartCount; i++)
         {
@@ -56,5 +51,15 @@ public class HealthController : MonoBehaviour
                     _feedbackController.HandleOnLevelFinished(false);
             });
         });
+    }
+
+    public void DestroyHearts()
+    {
+        foreach (var helper in _spawnedHearts)
+        {
+            Destroy(helper.gameObject);
+        }
+
+        _spawnedHearts = new List<Image>();
     }
 }

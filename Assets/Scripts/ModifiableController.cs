@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using Helpers;
+using Pool;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,7 +10,6 @@ public class ModifiableController : MonoBehaviour
 {
     [SerializeField] private RectTransform upperParent;
     [SerializeField] private RectTransform lowerParent;
-    [SerializeField] private Slot slotPrefab;
     [SerializeField] private Modifiable[] modifiables;
     [SerializeField] private FeedbackController feedbackController;
 
@@ -24,14 +25,16 @@ public class ModifiableController : MonoBehaviour
         RemoveListeners();
     }
 
-    private void Start()
+    private void CreateLevel()
     {
         DecideModifiableStatus();
         for (int i = 0; i < modifiables.Length; i++)
         {
             var modifiable = modifiables[i];
-            var tempSlot = Instantiate(slotPrefab, upperParent);
-            var tempPair = Instantiate(slotPrefab, lowerParent);
+            var tempSlot = SlotPool.Instance.GetAvailableSlot();
+            tempSlot.transform.SetParent(upperParent);
+            var tempPair = SlotPool.Instance.GetAvailableSlot();
+            tempPair.transform.SetParent(lowerParent);
             modifiable.SetSlots(tempSlot, tempPair);
             modifiable.ConfigureSlots();
         }
@@ -61,6 +64,19 @@ public class ModifiableController : MonoBehaviour
         feedbackController.GiveFeedback(modifiable);
         modifiable.SetHasModified(false);
     }
+    
+    public void RestartGame()
+    {
+        DOTween.KillAll();
+        feedbackController.RestartFeedbackFields();
+        _originalChangeCount = 0;
+        _modifiedSlots = new List<Modifiable>();
+        foreach (var modifiable in modifiables)
+        {
+            modifiable.ResetSlots();
+        }
+        CreateLevel();
+    }
 
     public int GetProgressIndex()
     {
@@ -75,10 +91,12 @@ public class ModifiableController : MonoBehaviour
     private void AddListeners()
     {
         Modifiable.OnSlotClicked += HandleModifiableClick;
+        SlotPool.OnPoolReady += CreateLevel;
     }
 
     private void RemoveListeners()
     {
         Modifiable.OnSlotClicked -= HandleModifiableClick;
+        SlotPool.OnPoolReady -= CreateLevel;
     }
 }

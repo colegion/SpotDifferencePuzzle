@@ -19,11 +19,14 @@ public class FeedbackController : MonoBehaviour
 
     private ModifiableController _modifiableController;
 
+    private List<Image> _spawnedFeedbackIcons = new List<Image>();
+
     public void InjectModifiableController(ModifiableController controller)
     {
         _modifiableController = controller;
         progressUIHelper.InjectFeedbackController(this);
         healthController.InjectFeedbackController(this);
+        healthController.SpawnHearts();
     }
     public void GiveFeedback(Modifiable modifiable)
     {
@@ -31,6 +34,7 @@ public class FeedbackController : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             var feedback = Instantiate(feedbackPrefab, slots[i].transform.parent);
+            _spawnedFeedbackIcons.Add(feedback);
             feedback.sprite = modifiable.GetModifiedStatus() ? trialSuccessCircle : trialFailedCircle;
             if (modifiable.GetModifiedStatus())
             {
@@ -46,7 +50,7 @@ public class FeedbackController : MonoBehaviour
 
     public void SpawnProgressUnits(int count)
     {
-        progressUIHelper.SpawnUnits(count, this);
+        progressUIHelper.SpawnUnits(count);
     }
 
     public void HandleOnLevelFinished(bool isSuccess)
@@ -61,7 +65,19 @@ public class FeedbackController : MonoBehaviour
 
         DOVirtual.DelayedCall(1.5f, () =>
         {
-            SceneManager.LoadScene(sceneBuildIndex: 0);
+            _modifiableController.RestartGame();
         });
+    }
+
+    public void RestartFeedbackFields()
+    {
+        progressUIHelper.ResetUnits();
+        healthController.DestroyHearts();
+        foreach (var feedback in _spawnedFeedbackIcons)
+        {
+            Destroy(feedback.gameObject);
+        }
+
+        _spawnedFeedbackIcons = new List<Image>();
     }
 }

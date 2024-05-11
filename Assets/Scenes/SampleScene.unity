@@ -198,6 +198,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163488581}
   m_CullTransparentMesh: 1
+--- !u!4 &271343942 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8269392468152703440, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
+  m_PrefabInstance: {fileID: 4894654700749575025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +618,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 19854642, guid: 5e8497b6655946d409d80783fc124c25, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19854642, guid: 5e8497b6655946d409d80783fc124c25, type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -736,10 +745,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 271343942}
   - {fileID: 1722781943}
   - {fileID: 163488582}
   - {fileID: 4745477296204955060}
   - {fileID: 792228104}
+  - {fileID: 1813330020}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -822,6 +833,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722781942}
   m_CullTransparentMesh: 1
+--- !u!1 &1813330019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1813330020}
+  - component: {fileID: 1813330021}
+  m_Layer: 5
+  m_Name: SlotPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1813330020
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813330019}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1338203848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1813330021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813330019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0549115951e6894eb8150c1eb7299d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolParent: {fileID: 1813330020}
+  objectToPool: {fileID: 2255536426645247990, guid: 843a7f41bf7b4f84c93060eb70bfc648, type: 3}
 --- !u!1001 &1927728323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -965,6 +1026,10 @@ PrefabInstance:
     - target: {fileID: 19850206, guid: 5e8497b6655946d409d80783fc124c25, type: 3}
       propertyPath: InitialModule.startRotationY.minMaxState
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19854642, guid: 5e8497b6655946d409d80783fc124c25, type: 3}
+      propertyPath: looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19854642, guid: 5e8497b6655946d409d80783fc124c25, type: 3}
       propertyPath: playOnAwake
@@ -1115,7 +1180,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1338203848}
     m_Modifications:
     - target: {fileID: 2067309129867282951, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
       propertyPath: lowerParent
@@ -1152,6 +1217,18 @@ PrefabInstance:
     - target: {fileID: 4349211025085707302, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
       propertyPath: m_Name
       value: ModifiableController
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269392468152703440, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269392468152703440, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269392468152703440, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8269392468152703440, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1302,7 +1379,6 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1338203848}
-  - {fileID: 4894654700749575025}
   - {fileID: 1119901001}
   - {fileID: 1927728323}
   - {fileID: 965635904}
