@@ -13,8 +13,7 @@ public class Modifiable
     public SlotItems ItemHolder;
 
     private bool _hasModified;
-
-    public static event Action<List<Vector2>, bool> OnTrialHappened;
+    
     public static event Action<Modifiable> OnSlotClicked;
 
     public void ConfigureSlots()
@@ -25,6 +24,7 @@ public class Modifiable
             //@todo: make this return list for iterating.
             slots[0].SetSlot(itemTuple.Item1, this);
             slots[1].SetSlot(itemTuple.Item2, this);
+            Debug.Log("this is one of the modified ones" , slots[0].gameObject);
         }
         else
         {
@@ -44,13 +44,6 @@ public class Modifiable
     public void HandleOnSlotClick()
     {
         OnSlotClicked?.Invoke(this);
-        
-        var positionList = new List<Vector2>()
-        {
-            slots[0].GetComponent<RectTransform>().anchoredPosition,
-            slots[1].GetComponent<RectTransform>().anchoredPosition
-        };
-        OnTrialHappened?.Invoke(positionList, _hasModified);
     }
 
     public void SetHasModified(bool modify)

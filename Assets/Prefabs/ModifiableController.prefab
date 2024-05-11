@@ -74,5 +74,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feedbackPrefab: {fileID: 6479613097860843510, guid: ed1ee9cba941d10448de57d606f6da84, type: 3}
-  trialSuccessCircle: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  trialFailedCircle: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  trialSuccessCircle: {fileID: 21300000, guid: 38d2b3037ff797c468215576f3476377, type: 3}
+  trialFailedCircle: {fileID: 21300000, guid: 77067d08e7efbe6438adda58338c1d8a, type: 3}
+  progressUIHelper: {fileID: 0}
+  healthController: {fileID: 0}
+  successConfetti:
+  - {fileID: 0}
+  - {fileID: 0}
