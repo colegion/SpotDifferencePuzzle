@@ -45,6 +45,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         transform.SetParent(SlotPool.Instance.GetPoolTransform());
         SetIsActive(false);
         gameObject.SetActive(false);
+        ToggleInteractable(false);
     }
 
     public void SetIsActive(bool toggle)

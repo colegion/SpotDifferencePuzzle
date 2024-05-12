@@ -15,6 +15,7 @@ public class ModifiableController : MonoBehaviour
 
     private List<Modifiable> _modifiedSlots = new List<Modifiable>();
     private int _originalChangeCount;
+    
     private void OnEnable()
     {
         AddListeners();
@@ -77,7 +78,7 @@ public class ModifiableController : MonoBehaviour
         }
         CreateLevel();
     }
-
+    
     public int GetProgressIndex()
     {
         return _originalChangeCount - _modifiedSlots.Count - 1;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave_24
   m_EditorClassIdentifier: 
   ItemSprite: {fileID: 21300000, guid: 4c62d196d81f39744b74fc32a5449244, type: 3}
-  ItemPosition: {x: 391, y: 0}
+  ItemPosition: {x: -290, y: 6.8}
   ItemSize: {x: 124, y: 109}
   ItemRotation: {x: 0, y: 0, z: 0}
   ItemColor: {r: 1, g: 1, b: 1, a: 1}

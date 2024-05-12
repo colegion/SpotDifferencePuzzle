@@ -75,7 +75,7 @@ public class FeedbackController : MonoBehaviour
             } 
         }
 
-        DOVirtual.DelayedCall(1.5f, () =>
+        DOVirtual.DelayedCall(.5f, () =>
         {
             _modifiableController.RestartGame();
         });

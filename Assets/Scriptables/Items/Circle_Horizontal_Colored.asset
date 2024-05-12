@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Circle_Horizontal_Colored
   m_EditorClassIdentifier: 
   ItemSprite: {fileID: 21300000, guid: 66a9e079372d4d14e94aa29ef70db317, type: 3}
-  ItemPosition: {x: 360, y: -37.6}
-  ItemSize: {x: 31, y: 31}
+  ItemPosition: {x: 336.9, y: -39.1}
+  ItemSize: {x: 41.6, y: 41.6}
   ItemRotation: {x: 0, y: 0, z: 0}
   ItemColor: {r: 0.46666667, g: 0.67058825, b: 0.5921569, a: 1}

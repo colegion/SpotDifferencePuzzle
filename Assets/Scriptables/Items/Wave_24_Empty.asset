@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4717ce1022c99e46b63c1b3107c317b, type: 3}
-  m_Name: Snail_13
+  m_Name: Wave_24_Empty
   m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 21300000, guid: f8d6bbb9ddc4e4b4aabdabd837c1a57e, type: 3}
-  ItemPosition: {x: -441, y: -282.8}
-  ItemSize: {x: 100, y: 100}
+  ItemSprite: {fileID: 21300000, guid: 4c62d196d81f39744b74fc32a5449244, type: 3}
+  ItemPosition: {x: -290, y: 6.8}
+  ItemSize: {x: 124, y: 109}
   ItemRotation: {x: 0, y: 0, z: 0}
-  ItemColor: {r: 1, g: 1, b: 1, a: 1}
+  ItemColor: {r: 1, g: 1, b: 1, a: 0.003921569}
