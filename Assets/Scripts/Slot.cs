@@ -69,7 +69,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
             RectTransform clickedRectTransform = eventData.pointerPress.GetComponent<RectTransform>();
             RectTransformUtility.ScreenPointToLocalPointInRectangle(clickedRectTransform, eventData.position, eventData.pressEventCamera, out Vector2 localPos);
             RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), eventData.position, eventData.pressEventCamera, out Vector2 converted);
-            _modifiableParent.HandleOnSlotClick(converted);
+            _modifiableParent.HandleOnSlotClick(converted); 
         }
     }
 }

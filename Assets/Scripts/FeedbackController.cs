@@ -44,15 +44,19 @@ public class FeedbackController : MonoBehaviour
             }
             _spawnedFeedbackIcons.Add(feedback);
             feedback.sprite = modifiable.GetModifiedStatus() ? trialSuccessCircle : trialFailedCircle;
-            if (modifiable.GetModifiedStatus())
-            {
-                progressUIHelper.CompleteUnitByIndex(_modifiableController.GetProgressIndex());
-            }
-            else
-            {
-                healthController.DecrementHeart();
-            }
-            
+            TriggerFeedbackHelper(modifiable);
+        }
+    }
+
+    private void TriggerFeedbackHelper(Modifiable modifiable)
+    {
+        if (modifiable.GetModifiedStatus())
+        {
+            progressUIHelper.CompleteUnitByIndex(_modifiableController.GetProgressIndex());
+        }
+        else
+        {
+            healthController.DecrementHeart();
         }
     }
 
