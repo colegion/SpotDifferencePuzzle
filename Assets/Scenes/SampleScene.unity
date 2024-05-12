@@ -1190,6 +1190,30 @@ PrefabInstance:
       propertyPath: upperParent
       value: 
       objectReference: {fileID: 1722781943}
+    - target: {fileID: 2067309129867282951, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
+      propertyPath: modifiables.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067309129867282951, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
+      propertyPath: modifiables.Array.data[7].ItemHolder
+      value: 
+      objectReference: {fileID: 11400000, guid: 25b8b0acbe6e8a640bd31db626606d44, type: 2}
+    - target: {fileID: 2067309129867282951, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
+      propertyPath: modifiables.Array.data[8].ItemHolder
+      value: 
+      objectReference: {fileID: 11400000, guid: f435b262ad3de2b409b11ca90e9df23a, type: 2}
+    - target: {fileID: 2067309129867282951, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
+      propertyPath: modifiables.Array.data[9].ItemHolder
+      value: 
+      objectReference: {fileID: 11400000, guid: ce4f6ec9ec7e11d48b870c6495ba3b8b, type: 2}
+    - target: {fileID: 2067309129867282951, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
+      propertyPath: modifiables.Array.data[10].ItemHolder
+      value: 
+      objectReference: {fileID: 11400000, guid: bbc02cbc326f78d44b63aa1bf002b46d, type: 2}
+    - target: {fileID: 2067309129867282951, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
+      propertyPath: modifiables.Array.data[11].ItemHolder
+      value: 
+      objectReference: {fileID: 11400000, guid: 34cba8f7051380e4a8e061c47a03985b, type: 2}
     - target: {fileID: 3623743658948462312, guid: b023fe24985bb88489ac628ffd2d8c6b, type: 3}
       propertyPath: healthController
       value: 

@@ -62,8 +62,6 @@ MonoBehaviour:
     IsBackground: 0
   - ItemHolder: {fileID: 11400000, guid: d735b441c53180046bdc5204607cc3d9, type: 2}
     IsBackground: 0
-  - ItemHolder: {fileID: 11400000, guid: 0e0774cd2d2c3e049a1330ba894b996e, type: 2}
-    IsBackground: 0
   - ItemHolder: {fileID: 11400000, guid: 25b8b0acbe6e8a640bd31db626606d44, type: 2}
     IsBackground: 0
   - ItemHolder: {fileID: 11400000, guid: f435b262ad3de2b409b11ca90e9df23a, type: 2}
